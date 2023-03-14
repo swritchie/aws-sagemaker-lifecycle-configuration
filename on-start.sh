@@ -62,4 +62,8 @@ pip install git+https://github.com/$REPO.git
 # List environment
 conda list
 
+# Configure Git
+git config --global user.name 'Skylar Ritchie'
+git config --global user.email skylarwritchie@gmail.com
+
 EOF
