@@ -8,56 +8,36 @@ nohup sudo -b -u ec2-user -i <<'EOF'
 # Declare constants
 NAME="skylar_env"
 PYTHON=3.9
-REPO="swritchie/skylar_toolbox"
 
 # Create environment
-conda create -n $NAME python=$PYTHON -y 
-
+conda create \
+    -n $NAME \
+    -c conda-forge \
+    python=$PYTHON \
+    ipykernel \
+    -y
+    
 # Activate it
 conda activate $NAME
 
-# Set conda-forge as default channel for speed and consistency
-conda config --add channels conda-forge
-conda config --set chanel_priority strict 
-
-# Conda install package(s) for Jupyter
-conda install ipykernel -y
-
-# Conda install package(s) for AWS as whole
-conda install boto3 -y
-
-# Conda install package(s) for AWS SageMaker
-conda install sagemaker-python-sdk -y
-
-# Conda install package(s) for AWS SageMaker local mode
-conda install docker-compose pyyaml -y
-
-# Conda install package(s) for AWS S3 
-conda install \
-    fsspec \
-    s3fs \
-    -y
-
-# Conda install generic data science package(s)
-conda install \
+# Install packages
+pip install \
+    catboost \
+    docker-compose \
     fastparquet \
+    fsspec \
+    python-git \
     openpyxl \
     pandas \
+    pyyaml \
+    s3fs \
+    sagemaker \
     scikit-learn \
-    seaborn \
-    -y
-    
-# Conda install sepcific data science package(s)
-conda install \
-    catboost \
     scikit-plot \
-    -y
+    seaborn 
 
-# Conda install package for installing from GitHub, etc.
-conda install git -y
-    
-# Pip install toolbox
-pip install git+https://github.com/$REPO.git
+# Install toolboxes
+pip install git+https://github.com/swritchie/skylar-toolbox.git
 
 # List environment
 conda list
