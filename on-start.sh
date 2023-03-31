@@ -24,6 +24,7 @@ conda activate $NAME
 pip install \
     catboost \
     docker-compose \
+    dvc \
     fastparquet \
     fsspec \
     python-git \
