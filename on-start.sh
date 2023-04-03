@@ -7,7 +7,15 @@ nohup sudo -b -u ec2-user -i <<'EOF'
 
 # Declare constants
 NAME="skylar_env"
-PYTHON=3.9
+PYTHON=3.10
+
+# Install GitHub CLI
+type -p yum-config-manager >/dev/null || sudo yum install yum-utils -y
+sudo yum-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo yum install gh -y
+
+# Install DVC 
+pip install dvc
 
 # Create environment
 conda create \
@@ -23,11 +31,13 @@ conda activate $NAME
 # Install packages
 pip install \
     catboost \
+    category_encoders \
+    composeml \
     docker-compose \
-    dvc \
     fastparquet \
+    feature_engine \
+    featuretools \
     fsspec \
-    github-cli \
     python-git \
     openpyxl \
     pandas \
@@ -36,7 +46,9 @@ pip install \
     sagemaker \
     scikit-learn \
     scikit-plot \
-    seaborn 
+    seaborn \
+    tqdm \
+    woodwork
 
 # Install toolboxes
 pip install git+https://github.com/swritchie/skylar-toolbox.git
