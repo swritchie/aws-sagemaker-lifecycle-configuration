@@ -27,6 +27,7 @@ pip install \
     dvc \
     fastparquet \
     fsspec \
+    github-cli \
     python-git \
     openpyxl \
     pandas \
