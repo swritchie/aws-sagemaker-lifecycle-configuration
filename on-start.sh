@@ -14,7 +14,6 @@ conda create \
     -n $NAME \
     -c conda-forge \
     python=$PYTHON \
-    ipykernel \
     -y
     
 # Activate it
@@ -28,6 +27,7 @@ pip install \
     evalml \
     feature_engine \
     fsspec \
+    ipykernel \
     pyyaml \
     s3fs \
     sagemaker \
