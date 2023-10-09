@@ -46,5 +46,6 @@ conda list
 # Configure Git
 git config --global user.name 'Skylar Ritchie'
 git config --global user.email skylarwritchie@gmail.com
+git config --global merge.ff no
 
 EOF
