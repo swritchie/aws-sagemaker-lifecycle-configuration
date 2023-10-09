@@ -21,14 +21,16 @@ conda activate $NAME
 
 # Install packages
 pip install \
+    autogluon \
+    autokeras \
     awswrangler \
     composeml \
-    docker-compose \
     evalml \
+    fastai \
+    fastbook \
     feature_engine \
     fsspec \
     ipykernel \
-    pyyaml \
     s3fs \
     sagemaker \
     scikit-plot \
