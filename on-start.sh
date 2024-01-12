@@ -21,21 +21,14 @@ conda activate $NAME
 
 # Install packages
 pip install \
-    autogluon \
-    autokeras \
     awswrangler \
-    composeml \
-    evalml \
-    fastai \
-    fastbook \
+    catboost \
     feature_engine \
     fsspec \
     ipykernel \
     s3fs \
     sagemaker \
-    scikit-plot \
-    seaborn \
-    tqdm
+    seaborn
 
 # Install toolboxes
 pip install git+https://github.com/swritchie/skylar-toolbox.git
