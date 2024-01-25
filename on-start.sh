@@ -27,7 +27,7 @@ pip install \
     fsspec \
     ipykernel \
     s3fs \
-    sagemaker \
+    sagemaker[local] \
     seaborn
 
 # Install toolboxes
