@@ -23,6 +23,7 @@ conda activate $NAME
 pip install \
     awswrangler \
     catboost \
+    dask \
     docker-compose \
     feature_engine \
     fsspec \
