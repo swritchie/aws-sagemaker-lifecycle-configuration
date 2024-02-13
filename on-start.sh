@@ -23,8 +23,9 @@ conda activate $NAME
 pip install \
     awswrangler \
     catboost \
-    dask \
+    "dask[complete]" \
     docker-compose \
+    "dvc[s3]" \
     feature_engine \
     fsspec \
     ipykernel \
